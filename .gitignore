@@ -1,0 +1,20 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Secrets (protecao preventiva — a skill nao tem, mas garante)
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editores
+.vscode/
+.idea/
+*.swp
