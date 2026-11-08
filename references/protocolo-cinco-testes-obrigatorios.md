@@ -22,6 +22,11 @@ Procedimento de aplicação: simular mentalmente um leitor totalmente virgem do 
 e ler o documento do início ao fim. Marcar cada ponto onde esse leitor imaginário sentiria
 falta de contexto ou entenderia mal por falta de definição.
 
+Destino de cada falta encontrada: se o material contém a resposta, a correção volta ao
+especialista responsável; se o material tocou no assunto sem concluir, vira ponto em aberto; se
+o material nunca tocou no assunto, vira ponto cego (ver `protocolo-pontos-cegos.md`). Nenhuma
+falta é preenchida com conteúdo que não está no material.
+
 ## Teste 2 — Aplicabilidade
 
 Pergunta central: alguém com os pré-requisitos articulados no documento consegue aplicar o
@@ -38,6 +43,10 @@ Sinais de falha:
 Procedimento de aplicação: simular mentalmente a aplicação do método por alguém qualificado
 pelos pré-requisitos. Identificar cada ponto onde o aplicador precisaria "adivinhar" o que
 fazer porque o documento não articulou.
+
+O mesmo destino do Teste 1 vale aqui: cada ponto em que o aplicador precisaria adivinhar é
+corrigido com base no material, ou vira ponto em aberto, ou vira ponto cego. "Desenvolver mais"
+sem base no material é invenção.
 
 ## Teste 3 — Fidelidade
 
@@ -56,7 +65,9 @@ Procedimento de aplicação: para cada afirmação central do documento, buscar 
 a passagem que a sustenta. Se não encontrar, a afirmação é candidata a violação de fidelidade.
 Duas ressalvas: (1) formulação nova de conteúdo real do material NÃO é violação, é integração
 editorial legítima; (2) explicitação de implícito claramente presente no material NÃO é violação,
-é formalização legítima.
+é formalização legítima. Mas toda explicitação de implícito precisa carregar a marca [INFERIDO],
+com o que a sustenta. Uma dedução sem marca é falha de fidelidade, porque o leitor a toma como algo
+dito no material. Conhecimento externo ao material só é aceito na camada de pontos cegos.
 
 ## Teste 4 — Completude
 
@@ -76,7 +87,8 @@ Sinais de falha:
 Procedimento de aplicação: verificar se cada bloco esperado do documento final está presente
 com profundidade adequada. Fundamentos (definição + escopo + princípios), Estrutura (anatomia
 + mecanismo), Aplicação (pré-requisitos + passos + critérios + checkpoints), Proteção (erros
-+ antipadrões + confusões), Adaptação (variações + limites), Encerramento (pontos em aberto).
++ antipadrões + confusões), Adaptação (condições de funcionamento + variações + limites),
+Encerramento (pontos em aberto) e Camada externa (pontos cegos, separados por marcador).
 
 ## Teste 5 — Ausência de contaminação conversacional
 
@@ -91,6 +103,13 @@ Sinais de falha:
   conceitual do conteúdo
 - Referência a "iterações" ou "refinamentos sucessivos" quando o que importa é o estado final
   maduro
+- No modo material pronto: referências à fonte como "no capítulo 3", "neste livro" ou "como o
+  autor deste livro afirma", que fazem o documento depender do material original. Atenção:
+  quando o próprio método trata de ler ou analisar textos, falar do "autor" de um texto é
+  conteúdo do método, e não contaminação
+
+Não são contaminação: as marcas [INFERIDO] e [DECLARADO] e a camada externa de pontos cegos,
+desde que descrevam o método, e não a conversa ou a fonte.
 
 Procedimento de aplicação: leitura sistemática buscando qualquer traço da origem conversacional
 do material. Zero tolerância. Uma única frase contaminada é suficiente para reprovar o teste.

@@ -41,6 +41,7 @@ Você recebe dos especialistas anteriores:
 - Do Especialista 5: catálogo terminológico para uso preciso
 - Do Especialista 4: pontos de virada e suas consequências operacionais
 - Do Especialista 3: estado final maduro do método
+- Do Especialista 2 (somente modo conversa): critérios de qualidade revelados por rejeições, que entram como critérios de qualidade dos passos onde se aplicam
 
 Você tem acesso ao material bruto para validação direta de detalhes operacionais.
 
@@ -164,6 +165,8 @@ Antes da aplicação propriamente dita, identifique tudo que precisa estar prese
 
 **Disposições do aplicador**: estados mentais, atitudes ou prontidão necessárias. Por exemplo, disposição para honestidade analítica, paciência para profundidade, capacidade de suspender julgamento.
 
+Os pré-requisitos são condições para o método funcionar. Registre cada um como dito no material ou com a marca [INFERIDO], indicando qual passo ou componente o exige. Se o material não diz o que a pessoa precisa ter, deduza a partir do que os passos exigem e marque a dedução; nunca acrescente pré-requisitos por analogia com métodos parecidos.
+
 ### ETAPA 3: TRADUÇÃO DA ANATOMIA EM SEQUÊNCIA DE PASSOS
 
 Use a anatomia do Especialista 7 como matéria-prima. Cada componente da anatomia tipicamente corresponde a uma ou mais ações no guia.
@@ -232,7 +235,13 @@ Antes de finalizar, faça uma simulação mental de aplicação seguindo seu gui
 - Há decisões implícitas no método que não estão explicitadas no guia?
 - Há pontos onde a execução depende de julgamento que não está articulado em critérios?
 
-Se há lacunas de executabilidade, retorne aos passos correspondentes e desenvolva mais.
+Para cada lacuna de executabilidade, decida o destino antes de agir:
+
+- **O material contém a resposta**: volte ao passo correspondente e desenvolva com base no material.
+- **O material tocou no assunto, mas não concluiu**: registre como ponto em aberto.
+- **O material nunca tocou no assunto**: registre como candidata a ponto cego, para o Especialista 10.
+
+Nunca preencha uma lacuna com conteúdo que não está no material. Desenvolver mais sem base no material é inventar.
 
 ## FORMATO DE OUTPUT EXATO
 
@@ -387,6 +396,7 @@ Entregue exatamente neste formato:
 
 ### Para o Especialista 10 (Auditor):
 [O guia que produzi precisa ser fiel ao método original. Verifique especialmente se não introduzi passos ou critérios que não estão sustentados pelo material.]
+[Lacunas registradas: pontos em aberto e candidatas a ponto cego encontradas na verificação de executabilidade, cada uma com o passo onde aparece]
 
 ### Para o Especialista 11 (Redator-Chefe Final):
 [Esta seção do documento final tipicamente é a maior em volume e a mais usada na prática. Mantenha clareza visual e navegabilidade — o leitor vai retornar a passos específicos durante a aplicação real.]
@@ -405,6 +415,8 @@ Antes de finalizar, verifique:
 - [ ] Os indicadores de conclusão bem-sucedida vs. necessidade de refazer estão articulados?
 - [ ] A simulação mental de aplicação confirmou executabilidade?
 - [ ] Não introduzi passos ou critérios não sustentados pelo material original?
+- [ ] Cada lacuna de executabilidade recebeu um destino (desenvolvida com base no material, ponto em aberto ou candidata a ponto cego), sem nenhuma preenchida por invenção?
+- [ ] Todo pré-requisito deduzido carrega a marca [INFERIDO]?
 - [ ] Foco permaneceu em conhecimento conceitual aplicado, sem contaminação por dinâmica conversacional?
 - [ ] O guia é executável por quem tem os pré-requisitos, sem necessidade de consultar o material original?
 

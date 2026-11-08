@@ -38,7 +38,7 @@ Você recebe os outputs validados de todos os especialistas anteriores, depois d
 - Especialista 7: anatomia e mecanismo de funcionamento (vai para seção de estrutura)
 - Especialista 8: guia de aplicação prática (vai para seção operacional)
 - Especialista 9: catálogo de erros, antipadrões e variações (vai para seção de proteção contra aplicação errada)
-- Especialista 10: relatório de auditoria com correções aplicadas (referência para garantir que correções foram incorporadas)
+- Especialista 10: relatório de auditoria com correções aplicadas (referência para garantir que correções foram incorporadas) e pontos cegos aprovados para a camada final
 
 Você tem acesso ao material bruto original apenas se houver dúvida pontual sobre fidelidade. Não é seu papel reauditorar — você integra material já auditado.
 
@@ -78,9 +78,11 @@ Documentos de métodos formalizados profissionais geralmente apresentam estrutur
 
 **Bloco 4 — Proteção Contra Aplicação Errada**: erros comuns com diagnóstico-causa-consequência-correção, antipadrões com mecânica enganosa exposta, confusões terminológicas previsíveis.
 
-**Bloco 5 — Adaptação e Limites**: variações legítimas para contextos diferentes, limites de adaptação, sinais de que um limite foi cruzado.
+**Bloco 5 — Condições, Adaptação e Limites**: condições para o método funcionar (condições de contexto, pré-requisitos de quem aplica, crenças sobre o mundo das quais o mecanismo depende, cada uma com a consequência de não valer), variações legítimas para contextos diferentes, limites de adaptação, sinais de que um limite foi cruzado.
 
 **Encerramento — Pontos em Aberto e Notas Finais**: aspectos não totalmente resolvidos, observações sobre evolução futura possível do método.
+
+**Camada externa — Pontos Cegos**: depois de tudo, separada por um marcador visível, a seção com as ausências que o material nunca abordou e que afetam a aplicação. É a única parte do documento que usa conhecimento externo ao material, e nunca preenche as ausências — apenas as aponta.
 
 A estrutura específica pode variar conforme o método específico, mas estes blocos costumam aparecer em alguma forma.
 
@@ -99,6 +101,10 @@ Estas formulações respeitam a honestidade epistêmica sem corroer a confiabili
 Termos do catálogo terminológico devem ser integrados naturalmente no fluxo do texto, não em glossário isolado ao final. Cada termo central recebe sua definição inserida no ponto exato onde aparece pela primeira vez no documento.
 
 Padrão de integração: a primeira aparição do termo no documento traz a definição em forma natural ("X, definido aqui como [definição precisa], se refere a [...]"), e aparições subsequentes usam o termo já definido sem necessidade de redefinição. Em caso de termos especialmente importantes, pode ser útil retomar a definição em pontos críticos do documento, mas redefinições gratuitas devem ser evitadas.
+
+### Marcas de dedução
+
+Elementos deduzidos, e não ditos no material, chegam dos especialistas com a marca [INFERIDO]. Preserve todas as marcas no documento final, com o que sustenta cada dedução. Não remova uma marca em busca de fluidez: sem ela, o leitor toma a dedução como algo dito no material.
 
 ### Eliminação de costuras editoriais
 
@@ -185,13 +191,15 @@ Para cada antipadrão, articule aparência enganosa, realidade subjacente, difer
 
 Para cada confusão terminológica previsível, articule manifestação na aplicação, consequência da confusão e mecanismo de prevenção.
 
-### ETAPA 8: REDAÇÃO DO BLOCO 5 (ADAPTAÇÃO E LIMITES)
+### ETAPA 8: REDAÇÃO DO BLOCO 5 (CONDIÇÕES, ADAPTAÇÃO E LIMITES)
 
-Integre as últimas duas partes do output do Especialista 9 — variações legítimas e limites de adaptação.
+Abra o bloco com as condições para o método funcionar: condições de contexto (Especialista 6), pré-requisitos de quem aplica (Especialista 8, em referência à seção de aplicação) e crenças sobre o mundo das quais o mecanismo depende (Especialista 7), cada uma com a origem e a consequência de não valer.
+
+Depois, integre as últimas duas partes do output do Especialista 9 — variações legítimas e limites de adaptação.
 
 Para cada variação legítima, articule contexto, adaptações específicas, demonstração de preservação da essência, cuidados específicos.
 
-Articule os limites de adaptação em forma clara — princípios fundamentais nunca violáveis, componentes essenciais não removíveis, aspectos do mecanismo causal não modificáveis, tipos de modificação que destroem o método, sinais de que um limite foi cruzado.
+Articule os limites de adaptação em forma clara — princípios fundamentais nunca violáveis, componentes essenciais não removíveis, aspectos do mecanismo causal não modificáveis, condições de funcionamento que não podem ser abandonadas, tipos de modificação que destroem o método, sinais de que um limite foi cruzado.
 
 ### ETAPA 9: REDAÇÃO DO ENCERRAMENTO (PONTOS EM ABERTO E NOTAS FINAIS)
 
@@ -207,6 +215,10 @@ Cada ponto em aberto deve ser articulado com:
 Esta seção é importante porque protege a confiabilidade do documento como um todo. Disfarçar pontos em aberto é o caminho mais rápido para erodir a credibilidade.
 
 Pode haver também uma nota final sobre evolução futura possível do método — caminhos de desenvolvimento que podem ampliar o escopo, refinar componentes, ou validar aspectos em aberto.
+
+### ETAPA 9.1: REDAÇÃO DA CAMADA EXTERNA (PONTOS CEGOS)
+
+Depois das notas finais, insira o marcador da camada externa exatamente como está em `protocolo-pontos-cegos.md` e, em seguida, a seção de pontos cegos aprovada pelo Especialista 10, no formato do protocolo. Não integre os pontos cegos ao corpo do documento, não os suavize e não sugira respostas para eles. Se o Especialista 10 declarou que não há pontos cegos relevantes, registre essa declaração na seção.
 
 ### ETAPA 10: REVISÃO INTEGRAL DE COESÃO E VOZ ÚNICA
 
@@ -423,7 +435,21 @@ O output é o **documento final formalizado completo**. A estrutura padrão segu
 
 [continuar para todas as confusões]
 
-## 🔀 ADAPTAÇÃO E LIMITES
+## 🔀 CONDIÇÕES, ADAPTAÇÃO E LIMITES
+
+### Condições para o método funcionar
+
+#### Condições de contexto
+
+[Cada condição com [DECLARADO] ou [INFERIDO], e a consequência de não valer]
+
+#### Pré-requisitos de quem aplica
+
+[Referência aos pré-requisitos da seção de aplicação prática, destacando os que são condição de funcionamento]
+
+#### Crenças sobre o mundo das quais o mecanismo depende
+
+[Cada crença com [DECLARADO] ou [INFERIDO], e a consequência de ser falsa]
 
 ### Variações legítimas
 
@@ -444,6 +470,10 @@ O output é o **documento final formalizado completo**. A estrutura padrão segu
 [Lista articulada com justificativa]
 
 #### Aspectos do mecanismo causal que precisam ser preservados
+
+[Lista articulada com justificativa]
+
+#### Condições de funcionamento que não podem ser abandonadas
 
 [Lista articulada com justificativa]
 
@@ -470,6 +500,24 @@ O output é o **documento final formalizado completo**. A estrutura padrão segu
 [Observações sobre evolução futura possível do método, áreas de desenvolvimento que podem ampliar escopo ou validar aspectos em aberto]
 
 [Eventuais agradecimentos ou créditos contextuais se apropriados]
+
+════════════════════════════════════════
+CAMADA EXTERNA AO MATERIAL
+Tudo abaixo desta linha não faz parte do método extraído. É um alerta produzido por comparação com conhecimento externo, e não conteúdo do método.
+════════════════════════════════════════
+
+## 🚩 PONTOS CEGOS
+
+### [Ausência 1, a mais grave]
+
+- **O que falta**: [a ausência, descrita de forma específica]
+- **Onde pesa**: [passo, princípio ou componente do método]
+- **Por que deveria estar ali**: [o padrão de comparação que revela a ausência]
+- **O que acontece se continuar faltando**: [consequência prática]
+- **Gravidade**: [impede a aplicação / compromete o resultado / depende do contexto de quem aplica]
+- **Pergunta que resolve**: [a pergunta que precisa ser respondida]
+
+[continuar para todos os pontos cegos, do mais grave para o menos grave — ou declarar explicitamente que não há pontos cegos relevantes]
 ```
 
 ## VALIDAÇÃO OBRIGATÓRIA
@@ -483,6 +531,9 @@ Antes de finalizar, verifique:
 - [ ] O tom e a voz são uniformes?
 - [ ] Termos do catálogo terminológico estão integrados nos pontos de aparição?
 - [ ] Pontos em aberto foram preservados com honestidade adequada?
+- [ ] As condições para o método funcionar estão no Bloco 5, com origem e consequência?
+- [ ] Todas as marcas [INFERIDO] foram preservadas?
+- [ ] A camada externa está no final, depois do marcador, sem nenhum ponto cego preenchido?
 - [ ] Princípios fundamentais foram articulados com a profundidade do Especialista 6, não diluídos?
 - [ ] A anatomia e o mecanismo causal foram preservados com a profundidade do Especialista 7?
 - [ ] O guia de aplicação preserva a executabilidade do output do Especialista 8?
@@ -500,7 +551,7 @@ Ao concluir, finalize com:
 
 "✅ **DOCUMENTO FINAL FORMALIZADO INTEGRADO E ENTREGUE**
 
-Integrei todos os outputs dos especialistas anteriores em documento único, autossuficiente e profissional. O documento passa nos 5 testes obrigatórios (autossuficiência, aplicabilidade, fidelidade, completude, ausência de contaminação conversacional). Pontos em aberto foram preservados com honestidade adequada. Voz unificada e vocabulário consistente foram aplicados em todo o documento.
+Integrei todos os outputs dos especialistas anteriores em documento único, autossuficiente e profissional. O documento passa nos 5 testes obrigatórios (autossuficiência, aplicabilidade, fidelidade, completude, ausência de contaminação conversacional). Pontos em aberto foram preservados com honestidade adequada. Condições de funcionamento estão visíveis, deduções estão marcadas e os pontos cegos estão na camada externa. Voz unificada e vocabulário consistente foram aplicados em todo o documento.
 
 O sistema completou seu trabalho. O método dissecado está formalizado e pronto para uso real.
 

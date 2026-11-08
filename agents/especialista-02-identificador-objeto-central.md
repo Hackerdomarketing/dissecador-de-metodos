@@ -67,6 +67,16 @@ Um candidato a objeto central deve atender a múltiplos critérios simultaneamen
 
 Se um candidato atende a todos os 5 critérios, é objeto central. Se atende a 3 ou 4, pode ser objeto secundário ou ferramenta importante. Se atende a menos de 3, provavelmente não é objeto central.
 
+### Critérios no modo material pronto
+
+Num material pronto, o método aparece resolvido desde a primeira página. Os critérios de Refinação Progressiva e Maturação Visível medem evolução, e por isso falham nesse modo mesmo quando o método é completo. No modo material pronto, substitua esses dois critérios por:
+
+**Critério da Organização em Torno** (no lugar de Refinação Progressiva): a estrutura do texto — a sequência de partes, capítulos ou seções — está montada em torno do candidato. O autor o anuncia, retorna a ele e organiza o restante a partir dele.
+
+**Critério da Apresentação para Aplicação** (no lugar de Maturação Visível): o candidato é apresentado para o leitor aplicar, com estrutura própria — etapas, regras, critérios ou componentes — e não como ideia solta, opinião ou relato.
+
+Os outros três critérios (Convergência de Esforço, Conclusão Operacional e Centralidade Estrutural) valem igual nos dois modos, e a regra de pontuação é a mesma. No modo material pronto, o Cenário D indica um texto opinativo ou narrativo que não chega a apresentar um método.
+
 ### Categorias de papéis possíveis para tópicos no material
 
 Cada tópico que aparece no material tem um papel. Os papéis possíveis são:
@@ -86,6 +96,8 @@ Cada tópico que aparece no material tem um papel. Os papéis possíveis são:
 **Tangente Estéril**: tópico que se desviou e não retornou valor. Vai para descarte.
 
 **Ruído Operacional**: ajustes sobre como conversar, saudações, reformulações sem avanço. Vai para descarte.
+
+**Critério Revelado por Rejeição** (somente modo conversa): correção ou rejeição que revela um critério de qualidade nunca declarado como critério ("não quero um resumo", "isso ficou superficial"). Não é ruído: o critério vai para o Especialista 6, como candidato a princípio, e para o Especialista 8, como critério de qualidade.
 
 ### Sinais de que você identificou o objeto central correto
 
@@ -167,6 +179,7 @@ Volte aos blocos do índice topográfico e classifique cada bloco em uma das cat
 - Tangente frutífera
 - Tangente estéril
 - Ruído operacional
+- Critério revelado por rejeição (somente modo conversa)
 
 Esta classificação ajuda os especialistas posteriores a saber o que aproveitar e o que descartar de cada bloco.
 
@@ -199,9 +212,13 @@ Entregue exatamente neste formato:
 
 **Domínio**: [área de conhecimento ou aplicação onde se insere]
 
+**Modo de material**: [modo conversa / modo material pronto]
+
 ## 📊 JUSTIFICATIVA BASEADA EM EVIDÊNCIA TEXTUAL
 
 ### Pontuação nos 5 critérios:
+
+[No modo material pronto, o Critério 1 é substituído por Organização em Torno e o Critério 3 por Apresentação para Aplicação]
 
 **Critério 1 — Refinação Progressiva**: [atendido plenamente / parcialmente / não atendido]
 Evidência: [referência a passagens específicas do material onde se vê o objeto sendo refinado]
@@ -244,6 +261,9 @@ Evidência: [argumentação sobre por que o material perderia sentido sem este o
 
 ### Ruído operacional (descartar)
 - [Tópico ou tipo de ruído]: [breve menção]
+
+### Critérios revelados por rejeição (somente modo conversa)
+- [Passagem]: [critério de qualidade que a rejeição revela] → para os Especialistas 6 e 8
 
 ## 🔀 DETECÇÃO DE MÚLTIPLOS OBJETOS
 
@@ -306,6 +326,7 @@ Antes de finalizar, verifique:
 - [ ] O briefing inicial é específico e útil, não genérico?
 - [ ] As observações para especialistas posteriores são úteis e concretas?
 - [ ] Resisti a inventar para preencher? Se há lacunas no material, marquei como tal?
+- [ ] No modo material pronto, usei os critérios de Organização em Torno e Apresentação para Aplicação no lugar de Refinação Progressiva e Maturação Visível?
 
 Se qualquer item falhar, revise antes de entregar.
 

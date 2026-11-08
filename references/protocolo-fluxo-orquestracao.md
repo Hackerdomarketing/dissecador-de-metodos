@@ -19,8 +19,23 @@ depende de inputs específicos produzidos pelos anteriores. A tabela abaixo most
 | 7 | Anatomista de Estrutura e Mecanismo | 2, 3, 4, 5, 6 | 8, 9, 10, 11 |
 | 8 | Engenheiro de Aplicação | 3, 4, 5, 6, 7 | 9, 10, 11 |
 | 9 | Catalogador de Erros e Variações | 3, 5, 6, 7, 8 | 10, 11 |
-| 10 | Auditor de Integridade | 1 a 9 + material bruto | Loop de correção se necessário → 11 |
+| 10 | Auditor de Integridade | 1 a 9 + material bruto | Loop de correção se necessário, varredura de pontos cegos → 11 |
 | 11 | Redator-Chefe Final | 1 a 10 (corrigidos) | Documento final ao usuário |
+
+## Modos de material
+
+O modo é escolhido na ativação e informado a cada especialista junto com seus inputs.
+
+- **Modo conversa**: os 11 especialistas operam como descrito em seus arquivos, incluindo a
+  reconstrução da evolução (Especialista 3) e dos pontos de virada (Especialista 4). As correções e
+  rejeições presentes no material são tratadas como pistas de critérios de qualidade
+  (Especialistas 1 e 2), e o motivo de cada versão abandonada segue do Especialista 3 para os
+  Especialistas 6 e 9.
+- **Modo material pronto**: os Especialistas 1 a 4 seguem as seções "Modo material pronto" de seus
+  arquivos. O Especialista 3 entrega um mapa de dependências em vez de um mapa de evolução, e o
+  Especialista 4 entrega ideias-chave em vez de pontos de virada. Os Especialistas 5 a 11 operam
+  igual. A tabela de dependências acima continua valendo: muda o conteúdo entregue, não quem
+  entrega para quem.
 
 ## Validações internas entre cada passo
 
@@ -51,8 +66,13 @@ antes de acionar o Especialista 11. O ciclo é:
 Auditor identifica problema → orquestrador reaciona especialista N → especialista N produz
 correção → auditor valida → se aprovado, prossegue para 11; se ainda tem problema, repete.
 
-Máximo de 3 iterações por especialista. Após isso, o problema vira "ponto em aberto" declarado
-honestamente no documento final.
+Antes de reacionar um especialista, aplicar a regra dos três destinos: só volta para correção o
+que pode ser corrigido com base no material. Se a correção exigiria informação ausente do material,
+ela não volta: vira ponto em aberto (se o material tocou no assunto) ou ponto cego (se nunca
+tocou). Pedir a um especialista para "desenvolver mais" sem base no material é pedir invenção.
+
+Máximo de 3 iterações por especialista. Após isso, o problema recebe o destino correspondente
+(ponto em aberto ou ponto cego) e é declarado honestamente no documento final.
 
 ## Comportamento em Modo A (Claude Code com Task tool)
 
@@ -108,7 +128,9 @@ Qual você prefere?"
 4. Sempre validar output de cada especialista antes de prosseguir.
 5. Nunca permitir contaminação conversacional no documento final.
 6. Sempre preservar profundidade. Resumir é perder.
-7. Nunca inventar para preencher lacunas. Marcar como pontos em aberto.
+7. Nunca inventar para preencher lacunas. Aplicar os três destinos: completar com base no
+   material, marcar como ponto em aberto ou registrar como ponto cego. Toda dedução recebe a
+   marca [INFERIDO].
 8. Sempre formalizar apenas a versão mais madura do conhecimento.
 9. Sempre operar com explicitude total — sem abreviações não explicadas.
 10. A conversa (material bruto) é veículo, não objeto. Extrair o conhecimento, nunca descrever

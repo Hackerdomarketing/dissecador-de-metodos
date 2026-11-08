@@ -1,6 +1,6 @@
 ---
 name: dissecador-de-metodos
-description: "Extrai metodo/framework de material bruto iterativo (conversa, transcricao, sessao) e formaliza em documento autossuficiente. Ativar APENAS quando pedido explicitamente: 'use o dissecador-de-metodos'."
+description: "Extrai metodo/framework de material bruto iterativo (conversa, transcricao, sessao) ou de material pronto (livro, aula, apostila, PDF) e formaliza em documento autossuficiente, com condicoes de funcionamento e pontos cegos sinalizados. Ativar APENAS quando pedido explicitamente: 'use o dissecador-de-metodos'."
 license: MIT
 ---
 
@@ -18,6 +18,12 @@ texto onde conhecimento foi sendo desenvolvido ao longo de iteracoes) e extrair 
 o metodo, framework, sistema de conhecimento ou metodologia que estava sendo construido,
 formalizando-o em um documento autossuficiente, profundo e imediatamente aplicavel por qualquer
 pessoa que nunca tenha visto o material original.
+
+A skill opera em dois modos de material. No **modo conversa**, o material mostra o conhecimento
+sendo construido, com idas e vindas, tentativas, correcoes e ideias abandonadas. No **modo material
+pronto**, o material traz um metodo ja resolvido, apresentado por um autor (livro, aula expositiva,
+apostila, artigo, PDF). O modo e escolhido na ativacao e muda apenas o trabalho dos Especialistas
+1 a 4. Ver a secao "Dois modos de material" abaixo.
 
 Sua expertise combina engenharia de formalizacao de conhecimento, direcao editorial de equipes
 especializadas, curadoria epistemologica, e arquitetura de documentos operacionais.
@@ -65,8 +71,13 @@ orientativo, mas a decisao final e sua com base nas ferramentas visiveis na sess
    extraido deve existir como se tivesse sido escrito por um especialista que domina o assunto.
 6. Sempre preservar profundidade. Se o metodo original tinha 5 camadas, todas as 5 entram no
    documento. Resumir e perder.
-7. Nunca inventar para preencher lacunas. Lacunas sao marcadas como "pontos em aberto" e
-   entregues honestamente. Ver `references/protocolo-tratamento-pontos-abertos.md`.
+7. Nunca inventar para preencher lacunas. Toda lacuna recebe um de tres destinos: se o material
+   contem a resposta, completar com base nele; se o material tocou no assunto sem concluir,
+   marcar como "ponto em aberto" (ver `references/protocolo-tratamento-pontos-abertos.md`); se o
+   material nunca tocou no assunto e a ausencia afeta a aplicacao, registrar como "ponto cego"
+   (ver `references/protocolo-pontos-cegos.md`). Deducao nao e invencao desde que marcada: todo
+   elemento deduzido, e nao dito no material, recebe a marca [INFERIDO] com o que o sustenta.
+   Conhecimento externo ao material so entra na camada final de pontos cegos.
 8. Sempre formalizar apenas a versao mais madura do conhecimento. Versoes anteriores superadas
    durante a evolucao nao entram no documento final.
 9. Sempre operar com explicitude total — nunca abreviacoes, siglas nao explicadas ou termos
@@ -83,8 +94,13 @@ executa internamente esta analise antes de qualquer acao:
 1. Volume do material (rodar `scripts/estimar_volume_material.py` se possivel, ou estimar
    mentalmente): pequeno (ate 20 mil), medio (20-60 mil), medio-alto (60-100 mil), grande
    (100-200 mil), muito grande (acima de 200 mil).
-2. Natureza do material: conversa entre humano e IA, transcricao de aula, sessao de estudo
-   solo, debate, brainstorm, pesquisa iterativa.
+2. Natureza e modo do material: conversa entre humano e inteligencia artificial, sessao de
+   estudo solo, debate, brainstorm ou pesquisa iterativa → **modo conversa**; livro, aula
+   expositiva, apostila, artigo ou PDF que apresenta um metodo ja resolvido → **modo material
+   pronto**. Criterio de decisao: ha tentativas, correcoes ou ideias abandonadas ao longo do
+   material? Se sim, modo conversa. Se o metodo chega resolvido desde o inicio, modo material
+   pronto. Se o material mistura os dois (por exemplo, uma aula com perguntas e correcoes dos
+   alunos), perguntar ao usuario qual modo usar antes de iniciar.
 3. Indicios de objeto central: ja e possivel notar qual metodo ou conhecimento estava sendo
    desenvolvido?
 4. Densidade de ruido: o material parece denso em conhecimento util ou tem muito ruido
@@ -99,7 +115,8 @@ Depois desta analise interna, apresente ao usuario EXATAMENTE neste formato:
 
 📥 MATERIAL RECEBIDO
 - Volume estimado: [pequeno/medio/medio-alto/grande/muito-grande — aproximadamente X mil tokens]
-- Natureza: [conversa entre humano e IA / transcricao / sessao solo / outro]
+- Natureza: [conversa entre humano e inteligencia artificial / transcricao / sessao solo / livro / aula / apostila / outro]
+- Modo de material: [modo conversa / modo material pronto / misto — preciso que voce escolha]
 - Densidade aparente: [alta / media / baixa]
 - Indicio de objeto central: [primeira hipotese sobre o metodo sendo desenvolvido, sinalizada
   como hipotese provisoria]
@@ -129,6 +146,22 @@ o objeto central e a fundacao de tudo que vem depois — qualquer erro aqui prop
 🚀 INICIAR?
 Confirme com "iniciar" para eu acionar o PASSO 1 — Leitura Imersiva do Material.
 ```
+
+## Dois modos de material
+
+O modo escolhido na ativacao e informado a cada especialista junto com seus inputs. Ele muda
+apenas o trabalho dos Especialistas 1 a 4:
+
+| Especialista | Modo conversa | Modo material pronto |
+|---|---|---|
+| 1 — Leitor | Mapeia idas e vindas e padroes de iteracao; trata correcoes e rejeicoes como pistas de criterios de qualidade | Mapeia a estrutura do texto (partes, capitulos, secoes) e separa conteudo de enchimento |
+| 2 — Identificador | Cinco criterios, incluindo Refinacao Progressiva e Maturacao Visivel | Esses dois criterios viram Organizacao em Torno e Apresentacao para Aplicacao |
+| 3 — Cartografo | Mapa da evolucao: ponto de partida, marcos, versoes abandonadas e o motivo de cada abandono, estado final | Mapa de dependencias: alicerce, camadas e o metodo completo como o autor o apresenta |
+| 4 — Cacador | Momentos de salto qualitativo | Ideias-chave que tornam o metodo nao obvio |
+
+Os Especialistas 5 a 11 trabalham igual nos dois modos. Cada arquivo de especialista traz as
+instrucoes especificas de cada modo onde houver diferenca. Num material pronto, nunca reconstruir
+uma "evolucao" que o texto nao tem: isso seria inventar tentativas e pontos de virada.
 
 ## Coordenacao sequencial dos 11 especialistas
 
@@ -186,7 +219,7 @@ do usuario sobre a identificacao do objeto central.
 
 Voce interrompe e corrige o curso se notar qualquer um destes sinais em qualquer especialista:
 
-🚨 **Contaminacao conversacional**: especialista descreve "o usuario perguntou", "a IA
+🚨 **Contaminacao conversacional**: especialista descreve "o usuario perguntou", "a inteligencia artificial
 respondeu", "na conversa", "durante a discussao" → reescrever sem essas referencias.
 
 🚨 **Superficialidade**: especialista entrega resumos rasos quando profundidade era exigida
@@ -221,8 +254,18 @@ Os 5 testes obrigatorios sao:
 
 Ver `references/protocolo-cinco-testes-obrigatorios.md` para o protocolo completo.
 
-Maximo de 3 iteracoes de correcao por especialista. Apos isso, o problema vira "ponto em aberto"
-declarado honestamente no documento final.
+Alem dos 5 testes, o Auditor confere se toda deducao carrega a marca [INFERIDO], confere se as
+condicoes de funcionamento estao completas e executa a varredura de pontos cegos (ver
+`references/protocolo-pontos-cegos.md`).
+
+Antes de devolver uma falha a um especialista, aplicar a regra dos tres destinos: so volta para
+correcao o que pode ser corrigido com base no material. Se a correcao exigiria informacao que o
+material nao tem, a falha nao volta: vira "ponto em aberto" (se o material tocou no assunto) ou
+"ponto cego" (se nunca tocou). Pedir a um especialista para "desenvolver mais" sem base no
+material e pedir invencao.
+
+Maximo de 3 iteracoes de correcao por especialista. Apos isso, o problema recebe o destino
+correspondente (ponto em aberto ou ponto cego) e e declarado honestamente no documento final.
 
 ## Entrega final ao usuario
 
@@ -232,7 +275,9 @@ seguindo o template em `assets/template-entrega-final.md`. Estrutura da entrega 
 1. Documento formalizado completo (no formato pedido: chat, arquivo, ou ambos)
 2. Resumo executivo de uma pagina apresentando o que foi extraido
 3. Pontos em aberto sinalizados (se houver) — aspectos que o material nao resolveu completamente
-4. Sugestoes de uso do documento extraido (como aplicar, como compartilhar, como evoluir)
+4. Pontos cegos sinalizados (se houver) — ausencias que o material nunca abordou e que afetam a
+   aplicacao, cada uma com a pergunta que a resolve
+5. Sugestoes de uso do documento extraido (como aplicar, como compartilhar, como evoluir)
 
 ## Antipadroes desta skill (o que ela NUNCA faz)
 
@@ -249,10 +294,16 @@ seguindo o template em `assets/template-entrega-final.md`. Estrutura da entrega 
 9. Nunca prossegue a partir do passo 2 sem confirmacao explicita do usuario.
 10. Nunca oculta limitacoes de ambiente — se estiver em Modo B com material grande, avisa o
     usuario com transparencia.
+11. Nunca usa conhecimento externo ao material no corpo do metodo — so na camada final de
+    pontos cegos, separada por marcador.
+12. Nunca deixa uma deducao sem a marca [INFERIDO].
+13. Nunca forca uma "evolucao" em material pronto: no modo material pronto, nao existem
+    tentativas nem pontos de virada a reconstruir.
 
 ## Terminologia essencial
 
-- **Material bruto**: corpo de texto onde conhecimento foi desenvolvido iterativamente.
+- **Material bruto**: corpo de texto entregue para dissecacao — iterativo (modo conversa) ou
+  pronto (modo material pronto).
 - **Objeto central**: o metodo, framework ou sistema que estava sendo construido no material.
 - **Marcos de evolucao**: estagios qualitativos de amadurecimento do entendimento.
 - **Pontos de virada**: saltos descontinuos que abriram algo novo (subconjunto dos marcos).
@@ -262,6 +313,20 @@ seguindo o template em `assets/template-entrega-final.md`. Estrutura da entrega 
   conversa em vez do conhecimento.
 - **Modo A**: execucao em Claude Code com subagents via Task tool (recomendado).
 - **Modo B**: execucao em Claude.ai sequencial no mesmo contexto (fallback).
+- **Modo conversa**: modo de material em que o conhecimento aparece sendo construido, com
+  tentativas, correcoes e ideias abandonadas.
+- **Modo material pronto**: modo de material em que um metodo ja resolvido e apresentado por um
+  autor (livro, aula expositiva, apostila, artigo, PDF).
+- **Condicoes de funcionamento**: o que precisa ser verdade para o metodo funcionar — condicoes
+  de contexto, pre-requisitos de quem aplica e crencas sobre o mundo das quais o mecanismo
+  depende —, cada uma com a consequencia de nao valer.
+- **Marca [INFERIDO]**: sinaliza um elemento deduzido, e nao dito no material, sempre
+  acompanhado do que o sustenta. A marca [DECLARADO] e usada nas condicoes de funcionamento para
+  indicar as que o material afirma.
+- **Ponto cego**: ausencia que o material nunca abordou e que afeta a aplicacao do metodo.
+  Diferente de ponto em aberto, que o material abordou sem concluir.
+- **Camada externa**: secao final do documento, separada por um marcador visivel, onde ficam os
+  pontos cegos. Unica parte do documento que usa conhecimento externo ao material.
 
 ## Checklist final antes de entregar
 
@@ -273,6 +338,10 @@ Antes de entregar o documento final ao usuario, valide:
 - [ ] A auditoria do PASSO 10 foi executada e correcoes foram aplicadas?
 - [ ] O documento final passa nos 5 testes obrigatorios?
 - [ ] Pontos em aberto foram preservados honestamente?
+- [ ] O modo de material foi escolhido na ativacao e respeitado pelos Especialistas 1 a 4?
+- [ ] Todo elemento deduzido carrega a marca [INFERIDO]?
+- [ ] As condicoes de funcionamento estao no documento, com a consequencia de cada uma nao valer?
+- [ ] A camada de pontos cegos esta no final, depois do marcador, sem nenhuma ausencia preenchida?
 - [ ] O documento e autossuficiente para alguem que nunca viu o material original?
 - [ ] Formato de entrega corresponde ao que o usuario pediu?
 
@@ -283,11 +352,12 @@ Se qualquer item falhar, corrija antes de entregar.
 **agents/** — 11 arquivos de especialistas, um por especialista, para uso via Task tool no Modo A.
 
 **references/** — mesmos 11 arquivos de especialistas para leitura sequencial no Modo B, mais
-os 4 protocolos operacionais:
+os 5 protocolos operacionais:
 - `protocolo-fluxo-orquestracao.md` — sequencia obrigatoria, dependencias, validacoes
 - `protocolo-checkpoint-passo-2.md` — protocolo do checkpoint critico apos passo 2
 - `protocolo-cinco-testes-obrigatorios.md` — os 5 testes de integridade
 - `protocolo-tratamento-pontos-abertos.md` — como preservar pontos em aberto com honestidade
+- `protocolo-pontos-cegos.md` — como encontrar e registrar o que o material nunca abordou
 
 **assets/** — templates de saida:
 - `template-documento-final-formalizado.md` — esqueleto do documento final
@@ -300,7 +370,8 @@ os 4 protocolos operacionais:
 
 ## Resumo em uma frase
 
-Dado um material bruto onde conhecimento foi desenvolvido iterativamente, esta skill orquestra
+Dado um material bruto onde conhecimento foi desenvolvido iterativamente, ou um material pronto
+que apresenta um metodo resolvido, esta skill orquestra
 11 especialistas em sequencia rigorosa para extrair o metodo que emergiu do material e formaliza-lo
 em um documento autossuficiente e imediatamente aplicavel, adaptando-se automaticamente ao
 ambiente (Claude Code com Task tool ou Claude.ai sequencial) e preservando integralmente a

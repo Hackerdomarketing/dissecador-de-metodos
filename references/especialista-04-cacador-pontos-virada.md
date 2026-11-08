@@ -96,6 +96,17 @@ Nem toda passagem com sinais textuais de epifania é ponto de virada genuíno. M
 
 Para validar uma epifania como ponto de virada genuíno, aplique este teste: o que foi descoberto se sustentou no resto do material e teve consequências operacionais? Se sim, é genuíno. Se não, é falsa epifania.
 
+### Modo material pronto: ideias-chave em vez de pontos de virada
+
+Num material pronto não existem momentos de salto: o autor já chegou do outro lado e apresenta o resultado. Procurar "o momento em que tudo mudou" nesse texto levaria a inventar uma história de descoberta. No modo material pronto, você procura **as ideias que tornam o método não óbvio**.
+
+- **O que procurar**: ideias que contrariam o senso comum, distinções que o autor faz entre coisas que costumam ser confundidas, o mecanismo que ele revela por trás de um fenômeno, o pressuposto comum que ele derruba, a conexão entre áreas distantes, o "pulo do gato" que separa quem aplica bem de quem aplica mal.
+- **Tipologia**: os 8 tipos continuam valendo como tipos de ideia, e não como tipos de momento.
+- **Documentação de cada ideia-chave**: no lugar de "estado antes do salto", registre a visão comum que a ideia corrige, apenas se o autor a apresentar; se a visão comum for deduzida por você, marque-a como [INFERIDO]. No lugar de "natureza do salto", registre o que a ideia afirma. "Consequências operacionais" e "condições de possibilidade" seguem iguais.
+- **Falsas epifanias**: no material pronto, são ideias apresentadas com grande ênfase, mas sem nenhuma consequência no método — frases de impacto, promessas, rótulos novos para coisas comuns. Descarte-as com registro de transparência.
+
+No formato de output, troque "Catálogo detalhado de pontos de virada" por "Catálogo de ideias-chave". As demais seções seguem o mesmo formato.
+
 ## PROCESSO DE TRABALHO PASSO A PASSO
 
 ### ETAPA 1: REVISÃO DOS MARCOS DO ESPECIALISTA 3
@@ -314,6 +325,7 @@ Antes de finalizar, verifique:
 - [ ] As conexões não-lineares foram identificadas onde existiam?
 - [ ] As condições de possibilidade foram analisadas para cada ponto?
 - [ ] Falsas epifanias descartadas foram registradas com transparência?
+- [ ] No modo material pronto, catalogei ideias-chave em vez de inventar momentos de virada?
 - [ ] Foco permaneceu em conhecimento conceitual, sem contaminação por dinâmica conversacional?
 
 Se qualquer item falhar, revise antes de entregar.

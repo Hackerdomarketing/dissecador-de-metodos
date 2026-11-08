@@ -2,7 +2,8 @@
 
 Skill para o Claude que orquestra 11 especialistas master-level em sequência rigorosa para
 extrair o método, framework ou sistema de conhecimento que emergiu em um material bruto
-iterativo (conversa, transcrição, sessão de estudo, brainstorm, pesquisa), e formalizá-lo
+iterativo (conversa, transcrição, sessão de estudo, brainstorm, pesquisa) ou de um material
+pronto (livro, aula, apostila, PDF), e formalizá-lo
 em um documento autossuficiente, profundo e imediatamente aplicável por qualquer pessoa que
 nunca tenha visto o material original.
 
@@ -17,9 +18,25 @@ entrega um documento formalizado completo que:
 - Fornece um guia executável passo a passo com critérios de qualidade e checkpoints
 - Cataloga erros comuns, antipadrões e variações legítimas
 - Preserva pontos em aberto com honestidade epistêmica
+- Torna visíveis as condições em que o método funciona e o que acontece se elas não valerem
+- Marca como [INFERIDO] tudo o que foi deduzido, e não dito no material
+- Aponta, numa camada final separada, os pontos cegos: o que o material nunca abordou e vai
+  fazer falta na aplicação
 
 O documento existe como se tivesse sido escrito por um especialista que domina o assunto,
 não como análise de uma conversa.
+
+## Dois modos de material
+
+- **Modo conversa**: o método aparece sendo construído, com tentativas, correções e ideias
+  abandonadas. A skill reconstrói a evolução, aproveita o motivo de cada abandono e trata as
+  correções como pistas de critérios de qualidade.
+- **Modo material pronto**: o método chega resolvido, apresentado por um autor (livro, aula,
+  apostila, PDF). A skill mapeia qual ideia depende de qual e quais ideias tornam o método não
+  óbvio, sem inventar uma evolução que o texto não tem.
+
+A skill escolhe o modo ao receber o material e mostra a escolha para você confirmar. Se o
+material for misto, ela pergunta.
 
 ## Como ativar
 
@@ -83,7 +100,8 @@ quando detectar essa situação e oferecer alternativas.
 
 1. Cole o material bruto na conversa (ou anexe como arquivo)
 2. Diga: "use o dissecador-de-metodos"
-3. A skill vai apresentar a análise inicial do material e perguntar o formato de output
+3. A skill vai apresentar a análise inicial do material, o modo escolhido (conversa ou material
+   pronto) e perguntar o formato de output
 4. Você confirma "iniciar" e a skill começa a rodar
 5. Após o Passo 2 (identificação do objeto central), a skill vai pausar e pedir sua confirmação
 6. Você confirma que o objeto central foi identificado corretamente
@@ -95,8 +113,8 @@ quando detectar essa situação e oferecer alternativas.
 
 - `SKILL.md` — orquestrador master, contém as regras absolutas e o fluxo de execução
 - `agents/` — 11 arquivos de especialistas para uso via Task tool no Claude Code
-- `references/` — mesmos 11 arquivos para leitura sequencial no Claude.ai, mais 4 protocolos
-  operacionais (fluxo, checkpoint, cinco testes, tratamento de pontos em aberto)
+- `references/` — mesmos 11 arquivos para leitura sequencial no Claude.ai, mais 5 protocolos
+  operacionais (fluxo, checkpoint, cinco testes, tratamento de pontos em aberto, pontos cegos)
 - `assets/` — templates de saída (documento formalizado e entrega final)
 - `scripts/` — utilitários Python (estimador de volume, detector de ambiente, validador
   heurístico)
@@ -118,8 +136,12 @@ quando detectar essa situação e oferecer alternativas.
 2. O sistema depende do material bruto ter maturado suficientemente para permitir formalização.
    Se o material não desenvolveu um objeto central identificável, o Especialista 2 vai reportar
    isso honestamente e a skill vai parar em vez de forçar formalização de conteúdo imaturo.
+   No modo material pronto, a mesma regra vale para textos opinativos ou narrativos que não
+   chegam a apresentar um método.
 3. Aspectos que o material não resolveu permanecem em aberto no documento final — a skill nunca
    inventa para preencher lacunas.
+4. A camada de pontos cegos usa conhecimento externo ao material para apontar ausências. Ela
+   nunca preenche essas ausências e fica separada do método por um marcador visível.
 
 ## Créditos
 

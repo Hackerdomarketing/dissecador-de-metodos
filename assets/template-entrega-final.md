@@ -17,6 +17,7 @@ final da execução.
 2. RESUMO EXECUTIVO
 - Método extraído: [nome preciso do método]
 - Domínio: [área de conhecimento onde se insere]
+- Modo de material: [modo conversa / modo material pronto]
 - Componentes principais: [lista curta dos elementos anatômicos centrais]
 - Aplicabilidade imediata: [contextos onde pode ser aplicado agora com base no documento]
 - Volume do documento final: [aproximadamente X palavras / N seções]
@@ -31,7 +32,12 @@ final da execução.
  "Não foram identificados pontos em aberto de escopo significativo. O método foi formalizado
   na sua forma consolidada sem necessidade de sinalizações honestas de incompletude."]
 
-4. SUGESTÕES DE USO
+4. PONTOS CEGOS SINALIZADOS
+[Lista das ausências que o material nunca abordou e que afetam a aplicação, do mais grave para
+ o menos grave, cada uma com a pergunta que a resolve. Se não houver, escrever: "Não foram
+ identificados pontos cegos relevantes."]
+
+5. SUGESTÕES DE USO
 
 Para aplicar imediatamente:
 - Leitura sequencial do documento para primeira apropriação do método
@@ -48,6 +54,8 @@ Para compartilhar com outras pessoas:
 
 Para evoluir o método no futuro:
 - Os pontos em aberto sinalizados são as direções naturais de próxima evolução
+- As perguntas dos pontos cegos indicam o que levar para uma nova conversa: respondidas, elas
+  podem ser incorporadas numa nova dissecação
 - Aplicações reais que forcem adaptação além dos limites articulados vão gerar aprendizado
 - Documente casos de aplicação para futura re-formalização quando volume de aprendizado
   justificar

@@ -30,6 +30,7 @@ do material que você forneceu:
 **Formulação completa**: [declaração específica]
 **Tipo**: [método operacional / framework conceitual / sistema de conhecimento / metodologia / outro]
 **Domínio**: [área de conhecimento ou aplicação]
+**Modo de material**: [modo conversa / modo material pronto]
 
 **Justificativa resumida**:
 [3-5 linhas com os pontos principais da justificativa nos 5 critérios]
@@ -54,6 +55,10 @@ a arriscar dissecar o objeto errado.
 
 **Resposta (a) — SIM**: prosseguir imediatamente para o passo 3 acionando o Especialista 3
 (Cartógrafo de Evolução).
+
+**Correção do modo de material**: se o usuário indicar que o modo está errado (por exemplo, o
+material é pronto e foi tratado como conversa), reacionar os Especialistas 1 e 2 no modo correto
+antes de repetir o checkpoint. Não prosseguir no modo errado.
 
 **Resposta (b) — PARCIALMENTE**: reacionar o Especialista 2 com instrução específica de ajuste
 baseada no feedback do usuário. Repetir o checkpoint após a correção. Não prosseguir sem novo

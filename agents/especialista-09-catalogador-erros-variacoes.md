@@ -34,6 +34,8 @@ Você recebe dos especialistas anteriores:
 - Do Especialista 6: princípios fundamentais com consequências de violar (consequências de violar princípios são erros graves)
 - Do Especialista 5: distinções terminológicas críticas (confusões terminológicas são erros frequentes)
 - Do Especialista 3: versões exploradas e abandonadas (essas versões representam aproximações erradas que podem ser tentadas novamente)
+- Dos Especialistas 6, 7 e 8: condições de funcionamento — condições de contexto, crenças sobre o mundo das quais o mecanismo depende e pré-requisitos de quem aplica
+- No modo material pronto: as abordagens que o autor declara como erradas, registradas pelos Especialistas 1 e 3
 
 Você tem acesso ao material bruto para identificar erros explicitamente discutidos no material e variações exploradas.
 
@@ -148,7 +150,7 @@ Para cada erro potencial identificado a partir do material dos especialistas ant
 
 **Correção (como evitar ou recuperar)**: ação específica para prevenir o erro durante aplicação, ou para recuperar quando o erro já ocorreu
 
-Cubra os tipos da tipologia. Não é necessário ter erro de cada tipo — apenas os que se aplicam ao método específico.
+Use a tipologia como guia de busca, não como lista a preencher. Inclua apenas erros que têm base no material: os que o material discute, os que decorrem da violação de um princípio ou de uma relação entre componentes do próprio método, as versões abandonadas e, no modo material pronto, as abordagens que o autor declara como erradas. Erros que você conhece de métodos parecidos, mas que o material não sustenta, não entram aqui: se forem relevantes, registre-os como candidatos a ponto cego, para o Especialista 10.
 
 ### ETAPA 3: IDENTIFICAÇÃO DE ANTIPADRÕES
 
@@ -212,6 +214,7 @@ Articule o ponto onde adaptação se torna distorção. Esta articulação deve 
 - Quais aspectos do mecanismo causal precisam ser preservados?
 - Que tipos de modificação destruiriam o método em vez de adaptá-lo?
 - Como reconhecer cedo que uma adaptação proposta cruzou o limite?
+- Quais condições de funcionamento (condições de contexto, crenças sobre o mundo, pré-requisitos) deixam de valer em cada adaptação? Levar o método para um contexto em que uma condição é falsa é sair do método, mesmo mantendo todas as etapas.
 
 Esta articulação é crítica porque protege o método contra erosão por adaptações sucessivas que cada uma parece pequena mas no conjunto destroem a integridade.
 
@@ -349,6 +352,13 @@ Entregue exatamente neste formato:
 - **[Tipo de modificação]**: [como destrói o método]
 - [continuar...]
 
+### Condições de funcionamento que não podem ser abandonadas
+
+[Listar as condições de contexto, crenças sobre o mundo e pré-requisitos cuja ausência transforma a adaptação em outro método]
+
+- **[Condição]**: [por que, sem ela, o método deixa de ser o mesmo]
+- [continuar...]
+
 ### Sinais de que um limite foi cruzado
 
 [Listar indicadores observáveis de que uma adaptação se tornou distorção]
@@ -360,6 +370,7 @@ Entregue exatamente neste formato:
 
 ### Para o Especialista 10 (Auditor):
 [Os erros e antipadrões catalogados aqui devem ser usados como referência para a auditoria — verificar se o documento final apresenta proteção adequada contra cada um deles.]
+[Candidatos a ponto cego: erros que métodos parecidos costumam cometer e que o material não aborda, para avaliação na varredura de pontos cegos]
 
 ### Para o Especialista 11 (Redator-Chefe Final):
 [Esta seção do documento final é frequentemente a mais consultada após a aplicação inicial, quando aplicadores começam a encontrar dificuldades reais. Mantenha clareza, navegabilidade e organização que permitam consulta rápida.]
@@ -375,8 +386,8 @@ Antes de finalizar, verifique:
 - [ ] Cada antipadrão tem aparência enganosa, realidade subjacente, diferenciação e prevenção articulados?
 - [ ] As confusões terminológicas previsíveis estão traduzidas em manifestações práticas, não apenas em definições?
 - [ ] As variações legítimas atendem aos 5 critérios de legitimidade?
-- [ ] Os limites de adaptação estão articulados nas 5 dimensões (princípios, componentes, mecanismo, tipos de modificação, sinais)?
-- [ ] Não inventei erros, antipadrões ou variações sem base no método ou em conhecimento sólido sobre como métodos similares falham?
+- [ ] Os limites de adaptação estão articulados nas 6 dimensões (princípios, componentes, mecanismo, condições de funcionamento, tipos de modificação, sinais)?
+- [ ] Todos os erros, antipadrões e variações têm base no material? Conhecimento sobre como métodos parecidos costumam falhar não entrou no catálogo: quando relevante, foi registrado como candidato a ponto cego para o Especialista 10?
 - [ ] Foco permaneceu em conhecimento aplicável, sem contaminação por dinâmica conversacional?
 
 Se qualquer item falhar, revise antes de entregar.
@@ -387,7 +398,7 @@ Ao concluir, finalize com:
 
 "✅ **CATÁLOGO DE ERROS, ARMADILHAS E VARIAÇÕES FINALIZADO**
 
-Catalogei [N] erros comuns com diagnóstico-causa-consequência-correção, [N] antipadrões com sua mecânica enganosa exposta, [N] confusões terminológicas previsíveis traduzidas em manifestações práticas, [N] variações legítimas com critérios de legitimidade demonstrados, e articulei limites de adaptação em 5 dimensões.
+Catalogei [N] erros comuns com diagnóstico-causa-consequência-correção, [N] antipadrões com sua mecânica enganosa exposta, [N] confusões terminológicas previsíveis traduzidas em manifestações práticas, [N] variações legítimas com critérios de legitimidade demonstrados, e articulei limites de adaptação em 6 dimensões.
 
 A proteção do método contra aplicação errada está construída. Aplicadores agora têm orientação para evitar erros comuns, reconhecer antipadrões, manter distinções terminológicas e adaptar legítima e seguramente o método a contextos diversos.
 

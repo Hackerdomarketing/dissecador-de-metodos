@@ -75,7 +75,11 @@ de qualidade, sinais de progresso, alertas]
 
 ---
 
-## Bloco 5 — Adaptação e Limites
+## Bloco 5 — Condições, Adaptação e Limites
+
+### Condições para o método funcionar
+[Condições de contexto, pré-requisitos de quem aplica e crenças sobre o mundo das quais o mecanismo
+depende — cada uma com [DECLARADO] ou [INFERIDO] e a consequência de não valer]
 
 ### Variações legítimas
 [Adaptações que preservam a essência em contextos diferentes]
@@ -97,6 +101,17 @@ conforme protocolo específico]
 ### Terminologia essencial de referência rápida
 [Glossário compacto ao final para consulta — termos criados, ressignificados, distinções
 críticas]
+
+---
+
+════════════════════════════════════════
+CAMADA EXTERNA AO MATERIAL
+Tudo abaixo desta linha não faz parte do método extraído. É um alerta produzido por comparação com conhecimento externo, e não conteúdo do método.
+════════════════════════════════════════
+
+## Pontos cegos
+[Ausências que o material nunca abordou e que afetam a aplicação, no formato de
+`references/protocolo-pontos-cegos.md`, do mais grave para o menos grave]
 ```
 
 ## Notas de aplicação do template pelo Especialista 11
@@ -114,3 +129,7 @@ O documento pode terminar com uma seção adicional se apropriado — "Créditos
 
 Densidade apropriada em cada bloco: nem parágrafos vazios, nem parágrafos que exaurem o leitor.
 Cada parágrafo carrega peso conceitual próprio.
+
+As marcas [INFERIDO] que chegam dos especialistas são preservadas no documento final, com o que
+sustenta cada dedução. A camada externa de pontos cegos fica sempre por último, depois do marcador,
+e nunca é integrada ao corpo do método.

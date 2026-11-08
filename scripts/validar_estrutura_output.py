@@ -17,7 +17,16 @@ Uso:
 
 import re
 import sys
+import unicodedata
 from pathlib import Path
+
+
+def sem_acentos(texto: str) -> str:
+    """
+    Remove acentos para que os padroes (escritos sem acento) encontrem palavras acentuadas.
+    Sem isso, "durante a discussão" nao seria encontrado pelo padrao "discussao".
+    """
+    return "".join(c for c in unicodedata.normalize("NFKD", texto) if not unicodedata.combining(c))
 
 
 # Padroes de contaminacao conversacional — se aparecem no documento, e falha do teste 5.
@@ -32,12 +41,17 @@ PADROES_CONTAMINACAO = [
     r"\ba inteligencia artificial (respondeu|disse|perguntou)\b",
     r"\bo modelo (respondeu|disse|perguntou)\b",
     r"\bo (chat|dialogo|prompt) (revelou|mostrou|indicou)\b",
+    # Modo material pronto: referencias a fonte que fazem o documento depender dela.
+    # "o autor diz" sozinho nao entra: em metodos sobre leitura de textos, "o autor" e conteudo.
+    r"\bo autor (deste|do) (livro|curso|ebook|material)\b",
+    r"\bno capitulo \d+",
+    r"\bneste (livro|curso|ebook|material)\b",
 ]
 
 # Blocos esperados no documento final — se algum bloco central estiver ausente, o teste 4
 # (completude) esta em risco.
 BLOCOS_ESPERADOS = {
-    "definicao": [r"defini[cç][aã]o formal", r"o que e este metodo", r"o que e este método"],
+    "definicao": [r"defini[cç][aã]o", r"o que [eé] este m[eé]todo"],
     "escopo": [r"escopo de aplica[cç][aã]o", r"onde se aplica"],
     "principios": [r"princ[íi]pios fundamentais"],
     "anatomia": [r"anatomia", r"estrutura e mecanismo", r"componentes"],
@@ -49,7 +63,11 @@ BLOCOS_ESPERADOS = {
     "variacoes": [r"varia[cç][oõ]es leg[íi]timas", r"varia[cç][oõ]es"],
     "limites": [r"limites de adapta[cç][aã]o", r"limites"],
     "pontos_abertos": [r"pontos em aberto"],
+    "condicoes": [r"condi[cç][oõ]es para o m[eé]todo funcionar"],
+    "pontos_cegos": [r"pontos cegos"],
 }
+
+MARCADOR_CAMADA_EXTERNA = "CAMADA EXTERNA AO MATERIAL"
 
 
 def teste_1_autossuficiencia(texto: str) -> tuple[bool, list[str]]:
@@ -60,7 +78,7 @@ def teste_1_autossuficiencia(texto: str) -> tuple[bool, list[str]]:
     problemas = []
     # Buscar referencias a "material original" ou "conversa" ou "iteracoes" no documento final —
     # nao deveriam estar la
-    if re.search(r"\b(no|do|no) material (original|bruto)\b", texto, re.IGNORECASE):
+    if re.search(r"\b(no|do|no) material (original|bruto)\b", sem_acentos(texto), re.IGNORECASE):
         problemas.append(
             "Documento faz referencia ao 'material original' — o leitor nao tem acesso a isso, "
             "e sinal de falha de autossuficiencia."
@@ -113,6 +131,23 @@ def teste_4_completude(texto: str) -> tuple[bool, list[str]]:
         if not encontrado:
             problemas.append(f"Bloco esperado ausente: {bloco}")
 
+    # A secao de pontos cegos precisa vir depois do marcador da camada externa
+    titulo_pontos_cegos = None
+    for m in re.finditer(r"^#+[^\n]*pontos cegos", texto, re.IGNORECASE | re.MULTILINE):
+        titulo_pontos_cegos = m.start()
+    if titulo_pontos_cegos is not None:
+        posicao_marcador = texto.find(MARCADOR_CAMADA_EXTERNA)
+        if posicao_marcador == -1:
+            problemas.append(
+                "Secao de pontos cegos sem o marcador da camada externa — o leitor pode confundir "
+                "conhecimento externo com conteudo do metodo."
+            )
+        elif posicao_marcador > titulo_pontos_cegos:
+            problemas.append(
+                "Secao de pontos cegos aparece antes do marcador da camada externa — ela precisa "
+                "ficar depois do marcador."
+            )
+
     return (len(problemas) == 0, problemas)
 
 
@@ -121,13 +156,14 @@ def teste_5_contaminacao(texto: str) -> tuple[bool, list[str]]:
     Buscar padroes de contaminacao conversacional. Qualquer aparicao e falha.
     """
     problemas = []
+    texto_busca = sem_acentos(texto)
     for padrao in PADROES_CONTAMINACAO:
-        matches = re.finditer(padrao, texto, re.IGNORECASE)
+        matches = re.finditer(padrao, texto_busca, re.IGNORECASE)
         for match in matches:
             # Pegar contexto ao redor
             inicio = max(0, match.start() - 40)
-            fim = min(len(texto), match.end() + 40)
-            contexto = texto[inicio:fim].replace("\n", " ")
+            fim = min(len(texto_busca), match.end() + 40)
+            contexto = texto_busca[inicio:fim].replace("\n", " ")
             problemas.append(f"Contaminacao conversacional detectada: '...{contexto}...'")
 
     return (len(problemas) == 0, problemas)

@@ -33,6 +33,8 @@ Você recebe dos especialistas anteriores:
 - Do Especialista 3: estado final maduro do objeto, princípios consolidados, mecanismos compreendidos, distinções estabelecidas
 - Do Especialista 4: pontos de virada que se cristalizaram em princípios, consequências operacionais
 - Do Especialista 5: catálogo terminológico completo a ser integrado nas suas formalizações
+- Do Especialista 3: motivos de abandono que revelam como o método funciona ou falha (no modo material pronto, as abordagens que o autor descarta, com o motivo dele)
+- Do Especialista 2 (somente modo conversa): critérios revelados por rejeição
 
 Você tem acesso ao material bruto para validação direta de qualquer detalhe.
 
@@ -161,6 +163,10 @@ Trabalhe quatro dimensões do escopo:
 
 **Contextos onde não se aplica**: situações que parecem similares mas onde o método não é adequado. Esta delimitação previne aplicações fora de escopo.
 
+**Condições de contexto**: o tipo de negócio, mercado, público, canal, porte ou momento para o qual o método foi pensado, mesmo que o material nunca diga que ele vale apenas ali. Registre cada condição com a marca [DECLARADO] (o material afirma) ou [INFERIDO] (o material não afirma, mas a lógica do método exige — indique qual parte exige) e com a consequência de ela não valer.
+
+Se o material não discute onde o método deixa de valer, não invente contextos de exclusão. Registre a ausência como candidata a ponto cego, para o Especialista 10.
+
 **Para quem é relevante**: perfil de pessoa, papel ou organização para quem o método tem valor prático. Pode ser amplo ou específico, dependendo do método.
 
 ### ETAPA 5: IDENTIFICAÇÃO DE PRINCÍPIOS CANDIDATOS
@@ -170,6 +176,10 @@ Volte aos princípios consolidados do Especialista 3 e aos pontos de virada do E
 Você está coletando amplamente. A filtragem rigorosa virá depois.
 
 Considere também princípios que não foram explicitamente articulados no material mas que estão implícitos no funcionamento do método e podem ser articulados a partir de evidência textual. Estes princípios implícitos podem ser legítimos se há base textual sólida — mas você deve ser cuidadoso para não inventar princípios que não estão no material.
+
+Todo princípio implícito recebe a marca [INFERIDO], com a passagem ou a parte do método que o sustenta. Sem a marca, o leitor toma a dedução como algo dito no material.
+
+Inclua também como candidatos os motivos de abandono recebidos do Especialista 3 e os critérios revelados por rejeição recebidos do Especialista 2 (modo conversa). Um motivo de abandono que revela como o método funciona é frequentemente um princípio que nunca foi enunciado como princípio.
 
 ### ETAPA 6: TESTE DOS PRINCÍPIOS CANDIDATOS CONTRA OS 5 CRITÉRIOS
 
@@ -255,6 +265,11 @@ Entregue exatamente neste formato:
 
 [Perfil de pessoa, papel ou organização para quem o método tem valor prático]
 
+### Condições de contexto
+
+- [Condição]: [DECLARADO] ou [INFERIDO — parte do método que exige] — Consequência se não valer: [o que acontece]
+- [continuar...]
+
 ## 📜 PRINCÍPIOS FUNDAMENTAIS
 
 [Listar princípios fundamentais ordenados por centralidade]
@@ -262,6 +277,8 @@ Entregue exatamente neste formato:
 ### Princípio 1: [Enunciado claro do princípio]
 
 **Tipo**: [Causal / Estrutural / Normativo / Distintivo / de Limitação]
+
+**Origem**: [dito no material, ou [INFERIDO] com a passagem ou a parte do método que o sustenta]
 
 **Articulação completa**:
 [Descrição com profundidade do que o princípio estabelece, indo além do enunciado para explicar o que o princípio realmente significa em sua aplicação ao método]
@@ -294,6 +311,10 @@ Entregue exatamente neste formato:
 
 ### Para o Especialista 9 (Catalogador de Erros e Variações):
 [As consequências de violar os princípios articulados aqui são matéria-prima direta para os erros comuns que você catalogará. Cada princípio violado tipicamente gera um erro reconhecível.]
+[As condições de contexto registradas aqui são matéria-prima para os limites de adaptação.]
+
+### Para o Especialista 10 (Auditor):
+[Candidatas a ponto cego — por exemplo, o material não discute onde o método deixa de valer]
 
 ### Para o Especialista 11 (Redator-Chefe Final):
 [Esta seção de definição e princípios é a fundação do documento. Outras seções referenciarão estes princípios. Mantenha consistência terminológica e conceitual com o que estabeleci aqui.]
@@ -314,6 +335,8 @@ Antes de finalizar, verifique:
 - [ ] Os princípios estão ordenados por centralidade?
 - [ ] Foco permaneceu em conhecimento conceitual, sem contaminação por dinâmica conversacional?
 - [ ] Não inventei princípios não sustentados pelo material?
+- [ ] Todo princípio implícito e toda condição deduzida carregam a marca [INFERIDO]?
+- [ ] Registrei as condições de contexto com a consequência de cada uma não valer?
 
 Se qualquer item falhar, revise antes de entregar.
 

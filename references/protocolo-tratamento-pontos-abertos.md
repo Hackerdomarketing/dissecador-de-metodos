@@ -19,12 +19,13 @@ Exemplos concretos:
   em aberto
 - Ausência de completude por escolha do formalizador — se o material tem informação e o
   formalizador não incluiu, é omissão, não ponto em aberto
-- Coisas que o material não abordou por estar fora do escopo — não são pontos em aberto, são
-  simplesmente fora de escopo
+- Coisas que o material nunca abordou — não são pontos em aberto. Se a ausência afeta a
+  aplicação do método, é ponto cego e segue `protocolo-pontos-cegos.md`. Se não afeta, é
+  simplesmente fora de escopo e não entra no documento
 
-O critério de distinção: ponto em aberto é sempre algo que estava dentro do escopo desenvolvido
-mas não chegou à consolidação final. Se estava fora do escopo, não é ponto em aberto — é apenas
-fora do escopo.
+O critério de distinção: ponto em aberto é sempre algo que o material abordou, mas que não chegou
+à consolidação final. O que o material nunca abordou não é ponto em aberto: ou é ponto cego (se
+faz falta na aplicação) ou é fora de escopo (se não faz falta).
 
 ## Regra absoluta: NUNCA inventar para preencher
 
@@ -103,3 +104,9 @@ inaplicável no seu próprio escopo consolidado, isso não é ponto em aberto �
 que o método ainda não maturou o suficiente para formalização. Nesse caso o formalizador deve
 declarar honestamente que o método não atingiu maturação suficiente para formalização, ainda
 que muitos aspectos tenham sido desenvolvidos.
+
+## Pontos em aberto no modo material pronto
+
+No modo material pronto, ponto em aberto é o que o autor abordou sem concluir: uma etapa anunciada
+e não explicada, um critério mencionado sem definição, uma exceção reconhecida sem orientação de
+como tratá-la. A regra é a mesma do modo conversa: declarar, nunca completar.
